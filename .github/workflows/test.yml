@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Get and echo GitHub account/organization
-      run: |
-        echo ::set-env name=ORG::$(dirname ${GITHUB_REPOSITORY})
-        echo ${ORG}
+    - name: Get GitHub account/organization
+      run: echo ::set-env name=ORG::$(dirname ${GITHUB_REPOSITORY})
+    - name: Echo account/organization
+      run: echo ${ORG}
