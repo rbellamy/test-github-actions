@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Get and echo GitHub account/organization
+      run: |
+        echo ::set-output name=ORG::$(dirname ${GITHUB_REPOSITORY})
+        echo ${ORG}
